@@ -1,5 +1,5 @@
 const Yoandy = require("./Yoandy.js");
 
-let test = new Yoandy("Somebody", "orange");
+let test = new Yoandy("Yoandy", "orange");
 
 test.speak();
