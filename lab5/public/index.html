@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function idSearch(event) {
+      event.preventDefault();
+
+      let input = document.getElementById("pokemonID").value;
+
+      fetch(`/ID/${input}`)
+        .then((res) => {
+          return res.json();
+        })
+        .then((results) => {
+          let update = document.getElementById("reportingArea");
+          if (results.error) {
+            update.innerHTML = results.error;
+          } else {
+            update.innerHTML = results.name;
+          }
+        });
+    }
+
+    function nameSearch(event) {
+      event.preventDefault();
+
+      let input = document.getElementById("pokemonName").value;
+
+      fetch(`/name/${input}`)
+        .then((res) => {
+          return res.json();
+        })
+        .then((results) => {
+          let update = document.getElementById("reportingArea");
+          if (results.error) {
+            update.innerHTML = results.error;
+          } else {
+            update.innerHTML = results.name;
+          }
+        });
+    }
+  </script>
+
+  <form onSubmit="idSearch(event)">
+    <input type="text" id="pokemonID" value="Enter Pokemon ID" />
+    <button>Enter</button>
+  </form>
+  <br />
+  <form onSubmit="nameSearch(event)">
+    <input type="text" id="pokemonName" value="Enter Pokemon Name" />
+    <button>Enter</button>
+    <div id="reportingArea"></div>
+  </form>
+</body>
+
+</html>
