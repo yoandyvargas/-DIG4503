@@ -1,0 +1,13 @@
+.navbar {
+  display: grid;
+}
+
+.navbar a {
+  color: lightcoral;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  transition-duration: 0.5s;
+  color: gray;
+}
