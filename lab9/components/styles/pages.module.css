@@ -1,0 +1,33 @@
+.home {
+  display: grid;
+  grid-template-columns: auto;
+  background-color: #dc143c;
+  width: 400px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.result {
+  margin: auto;
+  width: 300px;
+  background-color: black;
+}
+
+.type p {
+  font-size: 14px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.type button {
+  background-color: lightskyblue;
+  border: none;
+  color: white;
+}
+
+.type button:hover {
+  background-color: lightseagreen;
+  transition: 0.5s;
+}
