@@ -37,6 +37,7 @@ class NameSearch extends React.Component {
             id="pokemonName"
             defaultValue="Enter Pokemon Name"
           />
+          <br></br>
           <button>Enter</button>
         </form>
         {this.pokemonResultArea()}

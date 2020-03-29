@@ -38,6 +38,7 @@ class TypeSearch extends React.Component {
             id="pokemonType"
             defaultValue="Enter Pokemon Type"
           />
+          <br></br>
           <button>Enter</button>
         </form>
         {this.pokemonResultArea()}

@@ -31,6 +31,7 @@ class IdSearch extends React.Component {
       <div>
         <form onSubmit={this.readId}>
           <input type="text" id="pokemonID" defaultValue="Enter Pokemon ID" />
+          <br></br>
           <button>Enter</button>
         </form>
         {this.pokemonResultArea()}
