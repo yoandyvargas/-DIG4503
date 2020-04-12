@@ -60,7 +60,9 @@ class App extends React.Component {
   searcher = (event) => {
     event.preventDefault();
 
-    let input = document.getElementById("inputValue").value;
+    let input = document
+      .getElementById("inputValue")
+      .value.replace(/[^a-zA-Z ]/g, "");
 
     client
       .define(`${input}`)
@@ -69,7 +71,6 @@ class App extends React.Component {
       })
       .then(
         (results) => {
-          console.log(results.words);
           this.setState({
             words: results.word,
             pronunciation: results.pronunciation,
@@ -83,49 +84,32 @@ class App extends React.Component {
               hasError: "Word could not be found, try another.",
               words: "",
               pronunciation: "",
-              define: [],
+              define: [""],
             });
           }
         }
       );
   };
 
-  /*            <form onSubmit={this.testing}>
-              <input type="text" id="testing"></input>
-              <button>Get Weather</button>
-            </form>
-            <h1>hi</h1> <p>{this.state.words}</p>
-            <ul>
-              {this.state.define.map((item, index) => (
-                <li key={item.definition}>
-                  <p>
-                    {item.definition} {item.emoji}
-                  </p>
-                  <p>{item.type}</p>
-                  <p>{item.example}</p>
-                  <img src={item.image_url} />
-                </li>
-              ))}
-            </ul>
-            <p>{this.state.pronunciation}</p>
-
-
-
-
-          <form onSubmit={this.testing}>
-            <input type="text" id="testing"></input>
-            <button>Get Weather</button>
-          </form>
-
-
-
-            */
   render() {
     return (
       <div className="App">
-        <div>
-          <Search searchValue={this.searcher} random={this.randomizer} />
+        <div className="app-container">
+          <div className="header-elements">
+            <h1>Wordbook</h1>
+            <p>
+              Search for the definition of a word, or hit the randomzier to
+              learn some new ones.
+            </p>
+          </div>
+          <Search
+            className="main-1"
+            searchValue={this.searcher}
+            random={this.randomizer}
+            search={this.searcher}
+          />
           <Results
+            className="main-2"
             word={this.state.words}
             error={this.state.hasError}
             pronunciation={this.state.pronunciation}

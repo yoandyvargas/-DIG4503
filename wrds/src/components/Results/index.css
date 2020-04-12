@@ -1,15 +1,11 @@
 .container {
   display: grid;
+  grid-template-columns: 1fr;
   background-color: #f9f9f9;
   margin: auto;
-  max-width: 700px;
-  padding: 20px;
-  border-radius: 50px;
-  box-shadow: 2px 2px 12px gray;
-}
-
-.container img {
-  max-width: 150px;
+  width: 500px;
+  padding: 30px;
+  box-shadow: 1px 2px 4px gray;
 }
 
 .container h1 {
@@ -17,8 +13,15 @@
 }
 
 .container li {
-  border-top: 1px solid black;
-  padding: 10px;
-  max-width: 500px;
+  padding: 0px;
   list-style: none;
+  border-bottom: 1px dashed orange;
+  text-align: left;
+}
+
+.container ul {
+  padding: 0px;
+}
+
+.container h4 {
 }

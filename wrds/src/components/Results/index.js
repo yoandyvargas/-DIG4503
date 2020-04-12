@@ -17,12 +17,10 @@ class Results extends React.Component {
                 <p>
                   {item.definition} {item.emoji}
                 </p>
-                <p>{item.type}</p>
-                <p>{item.example}</p>
-                <img
-                  src={item.image_url}
-                  alt="random generalted photograph related to word"
-                />
+                <p>
+                  <em>{item.type}</em>
+                </p>
+                <img src={item.image_url} alt="" />
               </li>
             ))}
           </ul>
