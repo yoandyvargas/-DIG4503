@@ -58,3 +58,9 @@ input:focus {
   transition-timing-function: ease-in;
   transition-duration: 0.25s;
 }
+
+@media screen and (max-width: 599px) {
+  .search input[type="text"] {
+    width: 200px;
+  }
+}

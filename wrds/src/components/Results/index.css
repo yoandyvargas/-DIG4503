@@ -23,5 +23,8 @@
   padding: 0px;
 }
 
-.container h4 {
+@media screen and (max-width: 599px) {
+  .container {
+    width: 300px;
+  }
 }

@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f7762c1cc7f0ab892a7ce93374c947a0",
+    "revision": "0ec53d9d4b5932f8d6183f1b31b5f0e5",
     "url": "/DIG4503/index.html"
   },
   {
-    "revision": "d69cc9a678f8266601c5",
-    "url": "/DIG4503/static/css/main.5d705d22.chunk.css"
+    "revision": "d73b8cc71f4a04eb0ae7",
+    "url": "/DIG4503/static/css/main.30b6778f.chunk.css"
   },
   {
     "revision": "4b4096fb297944f19491",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DIG4503/static/js/2.8bd7cbb7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d69cc9a678f8266601c5",
+    "revision": "d73b8cc71f4a04eb0ae7",
     "url": "/DIG4503/static/js/main.71490d6e.chunk.js"
   },
   {
