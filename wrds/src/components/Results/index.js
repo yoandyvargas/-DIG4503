@@ -13,7 +13,7 @@ class Results extends React.Component {
         <div>
           <ul>
             {this.props.define.map((item, index) => (
-              <li key={item.definition}>
+              <li key={index}>
                 <p>
                   {item.definition} {item.emoji}
                 </p>

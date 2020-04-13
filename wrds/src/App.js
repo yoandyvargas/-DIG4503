@@ -1,14 +1,16 @@
 import React from "react";
 import Results from "../src/components/Results";
 import Search from "../src/components/Search";
+//owlbot dictionary free public API, https://owlbot.info , installed via npm //
 var Owlbot = require("owlbot-js");
 var client = Owlbot("cc79e2f4add1dac1bdd8949cbfb560bd3bc12ba5");
+//List of words.json from https://github.com/dwyl/english-words/blob/master/words_dictionary.json //
 var wordsData = require("./words.json");
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-
+    //States that hold information, words = actual word, pronunciation = self, define array includes type of word, definition of word, related emojis and images//
     this.state = {
       words: "",
       pronunciation: "",
@@ -16,7 +18,7 @@ class App extends React.Component {
       hasError: "",
     };
   }
-
+  //On page load, randomly pull up a word //
   componentDidMount() {
     window.addEventListener("load", this.randomizer);
   }
@@ -24,12 +26,12 @@ class App extends React.Component {
   componentWillUnmount() {
     window.removeEventListener("load", this.randomizer);
   }
-
+  //Provided words.json() list of words totalling 2466, generator a random word based off that json file and replace the "input" value to that word
   randomizer = () => {
     let result = Math.floor(Math.random() * 2466);
     const newWord = wordsData.data[`${result}`];
     let input = newWord;
-
+    //fetch OWLBOT dictionary API for previous randomly generated word "input"
     client
       .define(`${input}`)
       .then((res) => {
@@ -56,10 +58,10 @@ class App extends React.Component {
         }
       );
   };
-
+  //Search function
   searcher = (event) => {
     event.preventDefault();
-
+    //Get input from input text and remove symbols from any string inputs
     let input = document
       .getElementById("inputValue")
       .value.replace(/[^a-zA-Z ]/g, "");
@@ -84,7 +86,7 @@ class App extends React.Component {
               hasError: "Word could not be found, try another.",
               words: "",
               pronunciation: "",
-              define: [""],
+              define: [],
             });
           }
         }
